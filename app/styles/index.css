@@ -23,7 +23,7 @@
 }
 
 body {
-  background: var(--primary-dark-color);
+  background: var(--white-color);
 }
 
 /* body::-webkit-scrollbar {

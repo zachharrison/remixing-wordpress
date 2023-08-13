@@ -6,9 +6,9 @@ import { client } from '../lib/apollo';
 import { ContainerDiv } from '~/styles/styles';
 
 export async function loader() {
-  const PostsQuery = gql`
+  const BlogPostsQuery = gql`
     query GetPosts {
-      posts {
+      posts(where: { categoryName: "blog" }) {
         nodes {
           title
           content
@@ -18,21 +18,48 @@ export async function loader() {
       }
     }
   `;
-  const response = await client.query({
-    query: PostsQuery,
+
+  const ReviewsQuery = gql`
+    query Reviews {
+      posts(where: { categoryName: "review" }) {
+        nodes {
+          title
+          content
+          date
+          slug
+        }
+      }
+    }
+  `;
+  const blogResponse = await client.query({
+    query: BlogPostsQuery,
   });
 
-  const posts = response?.data?.posts?.nodes;
-  return posts;
+  const reviewResponse = await client.query({
+    query: ReviewsQuery,
+  });
+
+  const blogPosts = blogResponse?.data?.posts?.nodes;
+  const reviews = reviewResponse?.data?.posts?.nodes;
+  return { blogPosts, reviews };
 }
 
 export default function Index() {
-  const posts = useLoaderData();
+  const { blogPosts, reviews } = useLoaderData();
+
   return (
     <div>
       <Header title='Home Page'></Header>
+      <h3>Reviews</h3>
       <ContainerDiv>
-        {posts.map((post) => {
+        {reviews.map((review) => {
+          return <Post post={review} key={review.title}></Post>;
+        })}
+      </ContainerDiv>
+      <br />
+      <h3>Blogs</h3>
+      <ContainerDiv>
+        {blogPosts.map((post) => {
           return <Post post={post} key={post.title}></Post>;
         })}
       </ContainerDiv>
