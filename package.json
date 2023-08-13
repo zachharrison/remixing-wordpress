@@ -6,12 +6,9 @@
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",
-    "build:css": "npm run generate:css -- --minify",
     "build:remix": "remix build",
     "dev": "run-p dev:*",
-    "dev:css": "npm run generate:css -- --watch",
     "dev:remix": "remix dev",
-    "generate:css": "npx tailwindcss -o ./app/tailwind.css",
     "start": "remix-serve build"
   },
   "dependencies": {
@@ -21,14 +18,14 @@
     "@remix-run/serve": "^1.4.3",
     "graphql": "^16.4.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.4.3",
     "@remix-run/eslint-config": "^1.4.3",
     "eslint": "^8.11.0",
-    "npm-run-all": "^4.1.5",
-    "tailwindcss": "^3.0.24"
+    "npm-run-all": "^4.1.5"
   },
   "engines": {
     "node": ">=14"

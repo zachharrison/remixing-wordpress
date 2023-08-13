@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #3450a1;
+  --secondary-color: #041955;
+  --primary-dark-color: #03113a;
+  --white-color: #fdfcff;
+  --accent-color: #eb06ff;
+  --accent-hover: #c104d1;
+  --primary-font: 'Merriweather Sans', sans-serif;
+  --secondary-font: 'Roboto', sans-serif;
+  --scrollbar-background: rgb(52, 80, 161);
+  --scrollbar-gradient: linear-gradient(
+    17deg,
+    rgba(52, 80, 161, 1) 0%,
+    rgba(235, 5, 254, 1) 35%,
+    rgba(52, 80, 161, 1) 100%
+  );
+}
+
+body {
+  background: var(--primary-dark-color);
+}
+
+/* body::-webkit-scrollbar {
+  width: 6px;
+} */
+
+/* body::-webkit-scrollbar-track {
+  border-radius: 12px;
+  background-color: var(--white-color);
+  background-color: var(--secondary-color);
+} */
+
+body::-webkit-scrollbar-thumb {
+  /* Primary color option */
+  /* background: rgb(2, 0, 36);
+  background: linear-gradient(
+    17deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(3, 17, 58, 1) 35%,
+    rgba(52, 80, 161, 1) 100%
+  ); */
+
+  /* Pink option */
+  /* background: var(--scrollbar-background);
+  background: var(--scrollbar-gradient);
+  outline: none;
+  border-radius: 30px; */
+}

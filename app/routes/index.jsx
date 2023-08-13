@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import { useLoaderData } from '@remix-run/react';
 import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
+import { ContainerDiv } from '~/styles/styles';
 
 export async function loader() {
   const PostsQuery = gql`
@@ -27,15 +28,14 @@ export async function loader() {
 
 export default function Index() {
   const posts = useLoaderData();
-  console.log(posts);
   return (
     <div>
       <Header title='Home Page'></Header>
-      <div className='grid gap-8 grid-cols-1 lg:grid-cols-3 p-6'>
+      <ContainerDiv>
         {posts.map((post) => {
           return <Post post={post} key={post.title}></Post>;
         })}
-      </div>
+      </ContainerDiv>
     </div>
   );
 }
