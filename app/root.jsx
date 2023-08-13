@@ -5,23 +5,20 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+} from '@remix-run/react';
+import styles from '../app/styles/index.css';
 
-import styles from "./tailwind.css"
-
-export const links = () => [
-  { rel: "stylesheet", href: styles },
-];
+export const links = () => [{ rel: 'stylesheet', href: styles }];
 
 export const meta = () => ({
-  charset: "utf-8",
-  title: "Remixing WordPress",
-  viewport: "width=device-width,initial-scale=1",
+  charset: 'utf-8',
+  title: 'Remixing WordPress',
+  viewport: 'width=device-width,initial-scale=1',
 });
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
         <Meta />
         <Links />
