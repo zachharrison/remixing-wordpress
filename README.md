@@ -1,6 +1,6 @@
-# Remix & WordPress with Tailwind CSS
+# Remix & WordPress with Styled Components
 
-This resource demonstrates how to implement headless WordPress with the Remix framework and styling with Tailwind CSS
+This resource demonstrates how to implement headless WordPress with the Remix framework and styling with Styled Components
 
 
 [✍️ Read the step-by-step tutorial](https://developers.wpengine.com/blog/headless-wordpress-with-remix-and-tailwind-css)
